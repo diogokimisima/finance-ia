@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Mulish } from "next/font/google";
 import "./globals.css";
-import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
+import { ClerkProvider } from "@clerk/nextjs";
 
-const MulishFont = Mulish({
+const mulish = Mulish({
   subsets: ["latin-ext"],
 });
 
@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${MulishFont.className} dark antialiased`}>
+      <body className={`${mulish.className} dark antialiased`}>
         <ClerkProvider
           appearance={{
             baseTheme: dark,
