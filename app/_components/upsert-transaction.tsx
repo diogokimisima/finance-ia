@@ -40,7 +40,7 @@ import {
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { DatePickerDemo } from "./ui/date-picker";
-import { upsertTransaction } from "../_actions";
+import { upsertTransaction } from "../_actions/upsert-tranasction";
 
 interface UpsertTransactionDialogProps {
   isOpen: boolean;

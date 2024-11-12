@@ -4,7 +4,6 @@ import Navbar from "./_components/navbar";
 
 const Home = async () => {
   const { userId } = await auth();
-  console.log("userId", userId); // Adicione esse log para verificar o valor
   if (!userId) {
     redirect("/login");
   }
