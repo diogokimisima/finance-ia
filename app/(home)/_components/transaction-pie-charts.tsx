@@ -66,7 +66,7 @@ const TransactionPieCharts = ({
     },
   ];
   return (
-    <Card className="flex flex-col p-12">
+    <Card className="flex flex-col p-6">
       <CardHeader className="items-center pb-0">
         <CardTitle>Pie Chart - Donut</CardTitle>
         <CardDescription>January - June 2024</CardDescription>
