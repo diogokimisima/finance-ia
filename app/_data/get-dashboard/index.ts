@@ -73,7 +73,7 @@ export const getDashboard = async (month: string) => {
   ).map((category) => {
     const totalAmount = Number(category._sum.amount);
     const percentageOfTotal =
-      expensesTotal > 0 ? Math.round((totalAmount / expensesTotal) * 100) : 0; // Evita divisão por zero, se expensesTotal for 0
+      expensesTotal > 0 ? Math.round((totalAmount / expensesTotal) * 100) : 0;
     return {
       category: category.category,
       totalAmount,
