@@ -1,3 +1,3 @@
-"use server";
+'use server'
 
-export const generateAiReport = async () => {};
+export const generateAiReport = async () => {}

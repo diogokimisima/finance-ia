@@ -1,25 +1,25 @@
-"use client";
+'use client'
 
-import { ArrowDownUpIcon } from "lucide-react";
-import { Button } from "./ui/button";
-import { useState } from "react";
-import UpsertTransactionDialog from "./upsert-transaction";
+import { ArrowDownUpIcon } from 'lucide-react'
+import { Button } from './ui/button'
+import { useState } from 'react'
+import UpsertTransactionDialog from './upsert-transaction'
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "./ui/tooltip";
+} from './ui/tooltip'
 
 interface AddTransactionButtonProps {
-  userCanAddTransaction?: boolean;
+  userCanAddTransaction?: boolean
 }
 
 const AddTransactionButton = ({
   userCanAddTransaction,
 }: AddTransactionButtonProps) => {
-  console.log(userCanAddTransaction);
-  const [dialogIsOpen, setDialogIsOpen] = useState(false);
+  console.log(userCanAddTransaction)
+  const [dialogIsOpen, setDialogIsOpen] = useState(false)
 
   return (
     <>
@@ -37,7 +37,7 @@ const AddTransactionButton = ({
           </TooltipTrigger>
           <TooltipContent>
             {!userCanAddTransaction &&
-              "Você atingiu o limite de transações. Atualize o seu plano para criar transações ilimitadas"}
+              'Você atingiu o limite de transações. Atualize o seu plano para criar transações ilimitadas'}
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>
@@ -46,7 +46,7 @@ const AddTransactionButton = ({
         setIsOpen={setDialogIsOpen}
       />
     </>
-  );
-};
+  )
+}
 
-export default AddTransactionButton;
+export default AddTransactionButton

@@ -1,4 +1,4 @@
-import { Button } from "./ui/button";
+import { Button } from './ui/button'
 import {
   Dialog,
   DialogClose,
@@ -8,7 +8,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "./ui/dialog";
+} from './ui/dialog'
 import {
   Form,
   FormControl,
@@ -16,65 +16,66 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "./ui/form";
-import { Input } from "./ui/input";
-import { MoneyInput } from "./money-input";
+} from './ui/form'
+import { Input } from './ui/input'
+import { MoneyInput } from './money-input'
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "./ui/select";
+} from './ui/select'
 import {
   TRANSACTION_CATEGORY_OPTIONS,
   TRANSACTION_PAYMENT_METHOD_OPTIONS,
   TRANSACTION_TYPE_OPTIONS,
-} from "../_constants/transactions";
-import { z } from "zod";
+} from '../_constants/transactions'
+import { z } from 'zod'
 import {
   TransactionType,
   TransactionCategory,
   TransactionPaymentMethod,
-} from "@prisma/client";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { DatePickerDemo } from "./ui/date-picker";
-import { upsertTransaction } from "../_actions/upsert-tranasction";
+} from '@prisma/client'
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { DatePickerDemo } from './ui/date-picker'
+import { upsertTransaction } from '../_actions/upsert-tranasction'
 
 interface UpsertTransactionDialogProps {
-  isOpen: boolean;
-  defaultValues?: FormSchema;
-  transactionId?: string;
-  setIsOpen: (isOpen: boolean) => void;
+  isOpen: boolean
+  // eslint-disable-next-line no-use-before-define
+  defaultValues?: FormSchema
+  transactionId?: string
+  setIsOpen: (isOpen: boolean) => void
 }
 
 const formSchema = z.object({
   name: z.string().trim().min(1, {
-    message: "O nome é obrigatório.",
+    message: 'O nome é obrigatório.',
   }),
   amount: z
     .number({
-      required_error: "O valor é obrigatório.",
+      required_error: 'O valor é obrigatório.',
     })
     .positive({
-      message: "O valor deve ser positivo.",
+      message: 'O valor deve ser positivo.',
     }),
   type: z.nativeEnum(TransactionType, {
-    required_error: "O tipo é obrigatório.",
+    required_error: 'O tipo é obrigatório.',
   }),
   category: z.nativeEnum(TransactionCategory, {
-    required_error: "A categoria é obrigatória.",
+    required_error: 'A categoria é obrigatória.',
   }),
   paymentMethod: z.nativeEnum(TransactionPaymentMethod, {
-    required_error: "O método de pagamento é obrigatório.",
+    required_error: 'O método de pagamento é obrigatório.',
   }),
   date: z.date({
-    required_error: "A data é obrigatória.",
+    required_error: 'A data é obrigatória.',
   }),
-});
+})
 
-type FormSchema = z.infer<typeof formSchema>;
+type FormSchema = z.infer<typeof formSchema>
 
 const UpsertTransactionDialog = ({
   isOpen,
@@ -88,31 +89,31 @@ const UpsertTransactionDialog = ({
       amount: 50,
       category: TransactionCategory.OTHER,
       date: new Date(),
-      name: "",
+      name: '',
       paymentMethod: TransactionPaymentMethod.CASH,
       type: TransactionType.EXPENSE,
     },
-  });
+  })
 
   const onSubmit = async (data: FormSchema) => {
     try {
-      await upsertTransaction({ ...data, id: transactionId });
-      setIsOpen(false);
-      form.reset();
+      await upsertTransaction({ ...data, id: transactionId })
+      setIsOpen(false)
+      form.reset()
     } catch (error) {
-      console.error(error);
+      console.error(error)
     }
-  };
+  }
 
-  const isUpdate = Boolean(transactionId);
+  const isUpdate = Boolean(transactionId)
 
   return (
     <Dialog
       open={isOpen}
       onOpenChange={(open) => {
-        setIsOpen(open);
+        setIsOpen(open)
         if (!open) {
-          form.reset();
+          form.reset()
         }
       }}
     >
@@ -120,7 +121,7 @@ const UpsertTransactionDialog = ({
       <DialogContent>
         <DialogHeader>
           <DialogTitle>
-            {isUpdate ? "Atualizar" : "Criar"} transação
+            {isUpdate ? 'Atualizar' : 'Criar'} transação
           </DialogTitle>
           <DialogDescription>Insira as informações abaixo</DialogDescription>
         </DialogHeader>
@@ -263,14 +264,14 @@ const UpsertTransactionDialog = ({
                 </Button>
               </DialogClose>
               <Button type="submit">
-                {isUpdate ? "Atualizar" : "Adicionar"}
+                {isUpdate ? 'Atualizar' : 'Adicionar'}
               </Button>
             </DialogFooter>
           </form>
         </Form>
       </DialogContent>
     </Dialog>
-  );
-};
+  )
+}
 
-export default UpsertTransactionDialog;
+export default UpsertTransactionDialog

@@ -1,23 +1,23 @@
-import { auth, clerkClient } from "@clerk/nextjs/server";
-import Navbar from "../_components/navbar";
-import { redirect } from "next/navigation";
-import { Card, CardContent, CardHeader } from "../_components/ui/card";
-import { CheckIcon, XIcon } from "lucide-react";
-import AcquirePlanButton from "./_components/acquire-plan-button";
-import { Badge } from "../_components/ui/badge";
-import { getCurrentMonthTransactions } from "../_data/get-current-month-transactions";
+import { auth, clerkClient } from '@clerk/nextjs/server'
+import Navbar from '../_components/navbar'
+import { redirect } from 'next/navigation'
+import { Card, CardContent, CardHeader } from '../_components/ui/card'
+import { CheckIcon, XIcon } from 'lucide-react'
+import AcquirePlanButton from './_components/acquire-plan-button'
+import { Badge } from '../_components/ui/badge'
+import { getCurrentMonthTransactions } from '../_data/get-current-month-transactions'
 
 const Subscription = async () => {
-  const { userId } = await auth();
+  const { userId } = await auth()
 
   if (!userId) {
-    redirect("/login");
+    redirect('/login')
   }
 
-  const clerk = await clerkClient();
-  const user = await clerk.users.getUser(userId);
-  const currentMonthTransactions = await getCurrentMonthTransactions();
-  const hasPremiumPlan = user.publicMetadata.subscriptionPlan === "premium";
+  const clerk = await clerkClient()
+  const user = await clerk.users.getUser(userId)
+  const currentMonthTransactions = await getCurrentMonthTransactions()
+  const hasPremiumPlan = user.publicMetadata.subscriptionPlan === 'premium'
   return (
     <>
       <Navbar />
@@ -86,7 +86,7 @@ const Subscription = async () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Subscription;
+export default Subscription

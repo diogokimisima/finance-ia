@@ -1,27 +1,27 @@
-"use server";
+'use server'
 
-import { auth } from "@clerk/nextjs/server";
-import Stripe from "stripe";
+import { auth } from '@clerk/nextjs/server'
+import Stripe from 'stripe'
 
 export const createStripeCheckout = async () => {
-  const { userId } = await auth();
+  const { userId } = await auth()
   if (!userId) {
-    throw new Error("Unauthorized");
+    throw new Error('Unauthorized')
   }
 
   if (!process.env.STRIPE_SECRET_KEY) {
-    throw new Error("Stripe secret key is not defined");
+    throw new Error('Stripe secret key is not defined')
   }
 
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
-    apiVersion: "2024-10-28.acacia",
-  });
+    apiVersion: '2024-10-28.acacia',
+  })
 
   const session = await stripe.checkout.sessions.create({
-    payment_method_types: ["card"],
-    mode: "subscription",
-    success_url: "http://localhost:3000",
-    cancel_url: "http://localhost:3000",
+    payment_method_types: ['card'],
+    mode: 'subscription',
+    success_url: 'http://localhost:3000',
+    cancel_url: 'http://localhost:3000',
     subscription_data: {
       metadata: {
         clerk_user_id: userId,
@@ -33,6 +33,6 @@ export const createStripeCheckout = async () => {
         quantity: 1,
       },
     ],
-  });
-  return { sessionId: session.id };
-};
+  })
+  return { sessionId: session.id }
+}

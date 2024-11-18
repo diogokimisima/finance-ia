@@ -2,54 +2,54 @@ import {
   TransactionCategory,
   TransactionPaymentMethod,
   TransactionType,
-} from "@prisma/client";
+} from '@prisma/client'
 
 export const TRANSACTION_PAYMENT_METHOD_ICONS = {
-  [TransactionPaymentMethod.BANK_TRANSFER]: "bank-transfer.svg",
-  [TransactionPaymentMethod.BANK_SLIP]: "bank-slip.svg",
-  [TransactionPaymentMethod.CASH]: "money.svg",
-  [TransactionPaymentMethod.CREDIT_CARD]: "credit-card.svg",
-  [TransactionPaymentMethod.DEBIT_CARD]: "debit-card.svg",
-  [TransactionPaymentMethod.PIX]: "pix.svg",
-  [TransactionPaymentMethod.OTHER]: "other.svg",
-};
+  [TransactionPaymentMethod.BANK_TRANSFER]: 'bank-transfer.svg',
+  [TransactionPaymentMethod.BANK_SLIP]: 'bank-slip.svg',
+  [TransactionPaymentMethod.CASH]: 'money.svg',
+  [TransactionPaymentMethod.CREDIT_CARD]: 'credit-card.svg',
+  [TransactionPaymentMethod.DEBIT_CARD]: 'debit-card.svg',
+  [TransactionPaymentMethod.PIX]: 'pix.svg',
+  [TransactionPaymentMethod.OTHER]: 'other.svg',
+}
 
 export const TRANSACTION_CATEGORY_LABELS = {
-  EDUCATION: "Educação",
-  ENTERTAINMENT: "Entretenimento",
-  FOOD: "Alimentação",
-  HEALTH: "Saúde",
-  HOUSING: "Moradia",
-  OTHER: "Outros",
-  SALARY: "Salário",
-  TRANSPORTATION: "Transporte",
-  UTILITY: "Utilidades",
-};
+  EDUCATION: 'Educação',
+  ENTERTAINMENT: 'Entretenimento',
+  FOOD: 'Alimentação',
+  HEALTH: 'Saúde',
+  HOUSING: 'Moradia',
+  OTHER: 'Outros',
+  SALARY: 'Salário',
+  TRANSPORTATION: 'Transporte',
+  UTILITY: 'Utilidades',
+}
 
 export const TRANSACTION_PAYMENT_METHOD_LABELS = {
-  BANK_TRANSFER: "Transferência bancária",
-  BANK_SLIP: "Boleto",
-  CASH: "Dinheiro",
-  CREDIT_CARD: "Cartão de crédito",
-  DEBIT_CARD: "Cartão de débito",
-  PIX: "Pix",
-  OTHER: "Outro",
-};
+  BANK_TRANSFER: 'Transferência bancária',
+  BANK_SLIP: 'Boleto',
+  CASH: 'Dinheiro',
+  CREDIT_CARD: 'Cartão de crédito',
+  DEBIT_CARD: 'Cartão de débito',
+  PIX: 'Pix',
+  OTHER: 'Outro',
+}
 
 export const TRANSACTION_TYPE_OPTIONS = [
   {
     value: TransactionType.EXPENSE,
-    label: "Despesa",
+    label: 'Despesa',
   },
   {
     value: TransactionType.DEPOSIT,
-    label: "Depósito",
+    label: 'Depósito',
   },
   {
     value: TransactionType.INVESTMENT,
-    label: "Investimento",
+    label: 'Investimento',
   },
-];
+]
 
 export const TRANSACTION_PAYMENT_METHOD_OPTIONS = [
   {
@@ -84,7 +84,7 @@ export const TRANSACTION_PAYMENT_METHOD_OPTIONS = [
     value: TransactionPaymentMethod.OTHER,
     label: TRANSACTION_PAYMENT_METHOD_LABELS[TransactionPaymentMethod.OTHER],
   },
-];
+]
 
 export const TRANSACTION_CATEGORY_OPTIONS = [
   {
@@ -119,4 +119,4 @@ export const TRANSACTION_CATEGORY_OPTIONS = [
     value: TransactionCategory.TRANSPORTATION,
     label: TRANSACTION_CATEGORY_LABELS[TransactionCategory.TRANSPORTATION],
   },
-];
+]

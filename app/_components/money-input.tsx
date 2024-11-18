@@ -1,7 +1,7 @@
-import React, { forwardRef } from "react";
-import { NumericFormat, NumericFormatProps } from "react-number-format";
+import React, { forwardRef } from 'react'
+import { NumericFormat, NumericFormatProps } from 'react-number-format'
 
-import { Input, InputProps } from "@/app/_components/ui/input";
+import { Input, InputProps } from '@/app/_components/ui/input'
 
 export const MoneyInput = forwardRef(
   (
@@ -18,8 +18,8 @@ export const MoneyInput = forwardRef(
         customInput={Input}
         getInputRef={ref}
       />
-    );
+    )
   },
-);
+)
 
-MoneyInput.displayName = "MoneyInput";
+MoneyInput.displayName = 'MoneyInput'

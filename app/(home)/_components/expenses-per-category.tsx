@@ -1,11 +1,11 @@
-import { CardContent, CardHeader, CardTitle } from "@/app/_components/ui/card";
-import { Progress } from "@/app/_components/ui/progress";
-import { ScrollArea } from "@/app/_components/ui/scroll-area";
-import { TRANSACTION_CATEGORY_LABELS } from "@/app/_constants/transactions";
-import { TotalExpensePerCategory } from "@/app/_data/get-dashboard/types";
+import { CardContent, CardHeader, CardTitle } from '@/app/_components/ui/card'
+import { Progress } from '@/app/_components/ui/progress'
+import { ScrollArea } from '@/app/_components/ui/scroll-area'
+import { TRANSACTION_CATEGORY_LABELS } from '@/app/_constants/transactions'
+import { TotalExpensePerCategory } from '@/app/_data/get-dashboard/types'
 
 interface ExpensesPerCategoryProps {
-  expensesPerCategory: TotalExpensePerCategory[];
+  expensesPerCategory: TotalExpensePerCategory[]
 }
 
 const ExpensesPerCategory = ({
@@ -31,7 +31,7 @@ const ExpensesPerCategory = ({
         ))}
       </CardContent>
     </ScrollArea>
-  );
-};
+  )
+}
 
-export default ExpensesPerCategory;
+export default ExpensesPerCategory

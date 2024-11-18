@@ -3,16 +3,16 @@ import {
   TrendingDownIcon,
   TrendingUpIcon,
   WalletIcon,
-} from "lucide-react";
-import SummaryCard from "./summary-card";
+} from 'lucide-react'
+import SummaryCard from './summary-card'
 
 interface SummaryCards {
-  month: string;
-  balance: number;
-  depositsTotal: number;
-  investmentsTotal: number;
-  expensesTotal: number;
-  userCanAddTransaction: boolean;
+  month: string
+  balance: number
+  depositsTotal: number
+  investmentsTotal: number
+  expensesTotal: number
+  userCanAddTransaction: boolean
 }
 
 const SummaryCards = async ({
@@ -50,7 +50,7 @@ const SummaryCards = async ({
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SummaryCards;
+export default SummaryCards

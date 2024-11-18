@@ -1,35 +1,35 @@
-import { Button } from "@/app/_components/ui/button";
-import { CardContent, CardHeader, CardTitle } from "@/app/_components/ui/card";
-import { ScrollArea } from "@/app/_components/ui/scroll-area";
-import { TRANSACTION_PAYMENT_METHOD_ICONS } from "@/app/_constants/transactions";
-import { formatCurrency } from "@/app/transactions/_utils/currency";
-import { Transaction, TransactionType } from "@prisma/client";
-import Image from "next/image";
-import Link from "next/link";
+import { Button } from '@/app/_components/ui/button'
+import { CardContent, CardHeader, CardTitle } from '@/app/_components/ui/card'
+import { ScrollArea } from '@/app/_components/ui/scroll-area'
+import { TRANSACTION_PAYMENT_METHOD_ICONS } from '@/app/_constants/transactions'
+import { formatCurrency } from '@/app/transactions/_utils/currency'
+import { Transaction, TransactionType } from '@prisma/client'
+import Image from 'next/image'
+import Link from 'next/link'
 
 interface LastTransactionsProps {
-  lastTransactions: Transaction[];
+  lastTransactions: Transaction[]
 }
 
 const LastTransactions = ({ lastTransactions }: LastTransactionsProps) => {
   const getAmountColor = (transaction: Transaction) => {
     if (transaction.type === TransactionType.EXPENSE) {
-      return "text-red-500";
+      return 'text-red-500'
     }
     if (transaction.type === TransactionType.DEPOSIT) {
-      return "text-green-500";
+      return 'text-green-500'
     }
-    return "text-white";
-  };
+    return 'text-white'
+  }
   const getAmountPrefix = (transaction: Transaction) => {
     if (transaction.type === TransactionType.EXPENSE) {
-      return "-";
+      return '-'
     }
     if (transaction.type === TransactionType.DEPOSIT) {
-      return "+";
+      return '+'
     }
-    return "";
-  };
+    return ''
+  }
 
   return (
     <ScrollArea className="rounded-md border">
@@ -59,10 +59,10 @@ const LastTransactions = ({ lastTransactions }: LastTransactionsProps) => {
               <div>
                 <p className="text-sm font-bold">{transaction.name}</p>
                 <p className="text-sm text-muted-foreground">
-                  {new Date(transaction.date).toLocaleDateString("pt-BR", {
-                    day: "2-digit",
-                    month: "short",
-                    year: "numeric",
+                  {new Date(transaction.date).toLocaleDateString('pt-BR', {
+                    day: '2-digit',
+                    month: 'short',
+                    year: 'numeric',
                   })}
                 </p>
               </div>
@@ -75,7 +75,7 @@ const LastTransactions = ({ lastTransactions }: LastTransactionsProps) => {
         ))}
       </CardContent>
     </ScrollArea>
-  );
-};
+  )
+}
 
-export default LastTransactions;
+export default LastTransactions
