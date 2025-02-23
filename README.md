@@ -11,7 +11,7 @@
 
 > 🔎 Bem-vindo ao meu SaaS de finanças!
 <br>
-  <img src="src/img/print-tela.jpg" alt="print projeto" width="100%"/>
+  <img src="public/print.jpg" alt="print projeto" width="100%"/>
   
 ## :page_facing_up: Explicação
 O Financas.ai é uma plataforma SaaS para gerenciamento financeiro integrada com a API do ChatGPT, permitindo gerar relatórios mensais detalhados sobre transações e finanças. A solução oferece um painel interativo que exibe um resumo financeiro do mês atual e permite selecionar outros meses para consulta. Além disso, possui uma página exclusiva para transações, onde é possível adicionar novas movimentações e visualizar todas as transações passadas.
@@ -21,7 +21,7 @@ O Financas.ai é uma plataforma SaaS para gerenciamento financeiro integrada com
 - Login: Tela de autenticação e cadastro utilizando Clerk, permitindo login com Google.
 - Dashboard: Apresenta o relatório financeiro do mês atual, com opção de selecionar outros meses. Inclui gráficos interativos utilizando Shadcn.
 - Transações: Exibe todas as transações financeiras, permitindo adicionar, editar e remover entradas.
-- Planos: Página para upgrade do plano gratuito para o pago, oferecendo benefícios avançados, como relatórios aprimorados com IA. O pagamento é processado via Stripe.
+- Assinatura: Página para upgrade do plano gratuito para o pago, oferecendo benefícios avançados, como relatórios aprimorados com IA. O pagamento é processado via Stripe.
 
 ## 🚀 Tecnologias Utilizadas
 
