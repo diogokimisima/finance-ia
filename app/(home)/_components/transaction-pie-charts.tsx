@@ -69,7 +69,7 @@ const TransactionPieCharts = ({
     <Card className="flex flex-col p-6">
       <CardHeader className="items-center pb-0">
         <CardTitle>Pie Chart - Donut</CardTitle>
-        <CardDescription>January - June 2024</CardDescription>
+        <CardDescription>January - June 2025</CardDescription>
       </CardHeader>
       <CardContent className="flex-1 pb-0">
         <ChartContainer
